@@ -15,7 +15,7 @@
     <main id="mainFormulario">
       <section class="formulario">
         <form class="formularioTexto"></form>
-        <textarea
+        <textarea class="espacioTexto"
           id="textoEncriptar"
           cols="70"
           rows="10"
@@ -25,8 +25,8 @@
         ></textarea>
         <p>⚠ Solo letras minusculas y sin acentos</p>
         <div id="espacioBotones">
-          <button>Encriptar</button>
-          <button>Desencriptar</button>
+          <button type="button" onclick="Encriptar()">Encriptar</button>
+          <button type="button" onclick="Desencriptar()">Desencriptar</button>
         </div>
       </section>
       <section class="cajaTextoEncriptado">
