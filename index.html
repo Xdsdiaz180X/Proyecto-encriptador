@@ -13,18 +13,29 @@
       <h1><img src="./images/2572665.png" alt="logo" /></h1>
     </header>
     <main id="mainFormulario">
-      <form class="formularioTexto"></form>
-      <textarea 
-      name="" 
-      id="textoEncriptar" 
-      cols="70" 
-      rows="10"
-      class="input-texto"
-      placeholder="Ingrese el texto aqui"
-      required
-      ></textarea>
-      <p>⚠ Solo letras minusculas y sin acentos</p>
+      <section class="formulario">
+        <form class="formularioTexto"></form>
+        <textarea
+          id="textoEncriptar"
+          cols="70"
+          rows="10"
+          class="input-texto"
+          placeholder="Ingrese el texto aqui"
+          required
+        ></textarea>
+        <p>⚠ Solo letras minusculas y sin acentos</p>
+        <div id="espacioBotones">
+          <button>Encriptar</button>
+          <button>Desencriptar</button>
+        </div>
+      </section>
+      <section class="cajaTextoEncriptado">
+        <textarea 
+        id="textoEncriptado" 
+        cols="70" 
+        rows="10"
+        ></textarea>
+      </section>
     </main>
   </body>
 </html>
-
