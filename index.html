@@ -14,23 +14,25 @@
     </header>
     <main id="mainFormulario">
       <section class="formulario">
-        <form class="formularioTexto"></form>
-        <textarea class="espacioTexto"
-          id="textoEncriptar"
-          cols="70"
-          rows="10"
-          class="input-texto"
-          placeholder="Ingrese el texto aqui"
-          required
-        ></textarea>
+        <form id="formularioTexto">
+          <textarea
+            id="espacioTexto"
+            id="textoEncriptar"
+            cols="70"
+            rows="10"
+            class="input-texto"
+            placeholder="Ingrese el texto aqui"
+            required
+          ></textarea>
+        </form>
         <p>⚠ Solo letras minusculas y sin acentos</p>
         <div id="espacioBotones">
-          <button type="button" onclick="Encriptar()">Encriptar</button>
-          <button type="button" onclick="Desencriptar()">Desencriptar</button>
+          <button type="button" onclick="encriptar()">Encriptar</button>
+          <button type="button" onclick="desencriptar()">Desencriptar</button>
         </div>
       </section>
       <section class="cajaTextoEncriptado">
-        <div class="cajatexto">
+        <div id="cajaTexto">
           <img src="./images/searching-svgrepo-com.png" alt="" />
           <h2 id="TituloTextoEncriptado">Ningun mensaje fue encontrado</h2>
           <p class="DescripcionTextoEncriptado">
@@ -39,5 +41,6 @@
         </div>
       </section>
     </main>
+    <script src="./script.js"></script>
   </body>
 </html>
