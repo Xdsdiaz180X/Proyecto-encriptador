@@ -42,6 +42,29 @@ function mostrarTextoEncriptado() {
     alert("Texto copiado");
   });
 }
+var textoDesencriptacion = [];
+
+function desencriptar() {
+  let textoDes = document.getElementById("espacioTexto").value;
+  const reglasDesencriptado = {
+    nter: "e",
+    mes: "i",
+    i: "a",
+    obe: "o",
+    fat: "u",
+  };
+
+  var textoDesencriptado = "";
+  for (let i = 0; i < textoDes.length; i += 3) {
+    let letra = textoDes.slice(i, i + 3);
+    let letraDesencriptada = reglasDesencriptado[letra] || letra;
+    textoDesencriptado += letraDesencriptada;
+  }
+
+  textoDesencriptacion.push(textoDesencriptado);
+  console.log(textoDesencriptacion);
+  document.querySelector("#formularioTexto").reset();
+}
 
 
 
