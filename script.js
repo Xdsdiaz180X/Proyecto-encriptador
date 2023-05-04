@@ -25,7 +25,25 @@ function encriptar() {
 
 function mostrarTextoEncriptado() {
   const textoFinal = textoEncriptacion[textoEncriptacion.length - 1];
-  document.getElementById("cajaTexto").innerHTML = textoFinal;
+  const cajaTexto = document.getElementById("cajaTexto");
+  cajaTexto.innerHTML = textoFinal;
+
+  const botonCopiar = document.createElement("button");
+  botonCopiar.innerHTML = "Copiar";
+  cajaTexto.appendChild(botonCopiar);
+
+  botonCopiar.addEventListener("click", (e) => {
+    const elementoTemporal = document.createElement("textarea");
+    elementoTemporal.value = textoFinal;
+    document.body.appendChild(elementoTemporal);
+    elementoTemporal.select();
+    document.execCommand("copy");
+    document.body.removeChild(elementoTemporal);
+    alert("Texto copiado");
+  });
 }
+
+
+
 
 
