@@ -44,25 +44,27 @@ function mostrarTextoEncriptado() {
 }
 var textoDesencriptacion = [];
 
-function desencriptar() {
+function desencriptar(textoFinal) {
   let textoDes = document.getElementById("espacioTexto").value;
-  const reglasDesencriptado = {
-    nter: "e",
-    mes: "i",
-    i: "a",
-    obe: "o",
-    fat: "u",
+  const reglasInversas = {
+    enter: "e",
+    imes: "i",
+    ai: "a",
+    ober: "o",
+    ufat: "u",
   };
 
-  var textoDesencriptado = "";
-  for (let i = 0; i < textoDes.length; i += 3) {
-    let letra = textoDes.slice(i, i + 3);
-    let letraDesencriptada = reglasDesencriptado[letra] || letra;
-    textoDesencriptado += letraDesencriptada;
+  var palabraDesencriptada = "";
+  for (let i = 0; i < textoFinal.length; i++) {
+    let letraEncriptada = textoFinal[i];
+    let letraDesencriptada = reglasInversas[letraEncriptada] || letraEncriptada;
+    palabraDesencriptada += letraDesencriptada;
   }
+  return palabraDesencriptada;
+}
 
   textoDesencriptacion.push(textoDesencriptado);
-  console.log(textoDesencriptacion);
+  console.log(palabraDesencriptada);
   document.querySelector("#formularioTexto").reset();
 }
 
