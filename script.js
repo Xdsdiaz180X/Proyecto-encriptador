@@ -44,7 +44,7 @@ function mostrarTextoEncriptado() {
 }
 var textoDesencriptacion = [];
 
-function desencriptar(textoFinal) {
+function desencriptar() {
   let textoDes = document.getElementById("espacioTexto").value;
   const reglasInversas = {
     enter: "e",
@@ -55,19 +55,48 @@ function desencriptar(textoFinal) {
   };
 
   var palabraDesencriptada = "";
-  for (let i = 0; i < textoFinal.length; i++) {
-    let letraEncriptada = textoFinal[i];
-    let letraDesencriptada = reglasInversas[letraEncriptada] || letraEncriptada;
+  for (let i = 0; i < textoDes.length; i++) {
+    let letraEncriptada = textoDes[i];
+    let letraDesencriptada = "";
+    for (let reglaEncriptada in reglasInversas) {
+      if (textoDes.startsWith(reglaEncriptada, i)) {
+        letraDesencriptada = reglasInversas[reglaEncriptada];
+        i += reglaEncriptada.length - 1;
+        break;
+      }
+    }
+    if (!letraDesencriptada) {
+      letraDesencriptada = letraEncriptada;
+    }
     palabraDesencriptada += letraDesencriptada;
   }
-  return palabraDesencriptada;
-}
 
-  textoDesencriptacion.push(textoDesencriptado);
+  textoDesencriptacion.push(palabraDesencriptada)
   console.log(palabraDesencriptada);
   document.querySelector("#formularioTexto").reset();
+  
+  mostrarTextoDesencriptado()
 }
 
+function mostrarTextoDesencriptado() {
+  const textoFinalDesencriptado = textoDesencriptacion[textoDesencriptacion.length - 1];
+  const cajaTextoDesencriptada = document.getElementById("cajaTexto");
+  cajaTextoDesencriptada.innerHTML = textoFinalDesencriptado;
+
+  const botonCopiar2 = document.createElement("button");
+  botonCopiar2.innerHTML = "Copiar";
+  cajaTexto.appendChild(botonCopiar2);
+
+  botonCopiar2.addEventListener("click", (i) => {
+    const elementoTemporal = document.createElement("textarea");
+    elementoTemporal.value = textoFinalDesencriptado;
+    document.body.appendChild(elementoTemporal);
+    elementoTemporal.select();
+    document.execCommand("copy");
+    document.body.removeChild(elementoTemporal);
+    alert("Texto copiado");
+  });
+}
 
 
 
