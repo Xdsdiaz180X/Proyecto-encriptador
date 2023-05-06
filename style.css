@@ -27,7 +27,7 @@ body {
 
 .formulario p {
   color: gray;
-  margin-left: 90px;
+  margin-right: 100px;
   margin-top: auto;
 }
 
@@ -54,12 +54,13 @@ textarea::placeholder {
 
 #espacioBotones {
   margin-left: 90px;
-  margin-top: 9px;  
+  margin-top: 60px;  
 }
 
+
 .Encriptar {
-  width: 40%;
-  padding: 15px 0;
+  width: 45%;
+  padding: 20px 0;
   font-size: 18px;
   font-weight: bold;
   color: white;
@@ -77,12 +78,12 @@ textarea::placeholder {
 }
 
 .Desencriptar {
-  width: 40%;
-  padding: 15px 0;
+  width: 45%;
+  padding: 20px 0;
   font-size: 18px;
   font-weight: bold;
   color: black;
-  background-color: rgb(180, 178, 178);
+  background-color: rgb(203, 202, 202);
   border: solid 3px orange;
   border-radius: 20px;
   transition: 1s all;
@@ -97,7 +98,7 @@ textarea::placeholder {
 #cajaTexto {
   border-radius: 20px;
   width: 400px;
-  height: 750px;
+  height: 800px;
   border: solid 3px orange;
   text-align: center;
   margin-right: 50px;
@@ -105,7 +106,7 @@ textarea::placeholder {
 }   
 
 #cajaTexto img {
-  margin-top: 100px;
+  margin-top: 58px;
   margin-left: 50px;
   width: 300px;
   height: 550px;
