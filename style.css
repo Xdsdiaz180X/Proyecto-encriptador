@@ -1,0 +1,113 @@
+body {
+  background-color: white;
+  font-family: "Roboto Mono", monospace;
+}
+
+#cabeceraEncriptador {
+    padding: 20px 0;
+    display: block;
+    width: 500px;
+}
+
+#imgCabecera img {
+  width: 100px;
+  max-width: 100%;
+  height: auto;
+  padding-left: 30px;
+}
+
+#mainFormulario {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.formulario {
+  width: 700px;
+}
+
+.formulario p {
+  color: gray;
+  margin-left: 90px;
+  margin-top: auto;
+}
+
+#formularioTexto {
+  width: 711px;
+  height: 582px;
+}
+
+textarea {
+    width: 660px;
+    height: 582px;
+    border: none;
+    outline: none;
+    font-size: 30px;
+    padding: 30px;
+    margin-left: 12px;
+    font-family: "Roboto Mono", monospace;
+    color: orange;
+}
+
+textarea::placeholder {
+  color: orange;
+}
+
+#espacioBotones {
+  margin-left: 90px;
+  margin-top: 9px;  
+}
+
+.Encriptar {
+  width: 40%;
+  padding: 15px 0;
+  font-size: 18px;
+  font-weight: bold;
+  color: white;
+  background-color: orange;
+  border: none;
+  border-radius: 20px;
+  transition: 1s all;
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+.Encriptar:hover {
+  background-color: darkorange;
+  transform: scale(1.1);
+}
+
+.Desencriptar {
+  width: 40%;
+  padding: 15px 0;
+  font-size: 18px;
+  font-weight: bold;
+  color: black;
+  background-color: rgb(180, 178, 178);
+  border: solid 3px orange;
+  border-radius: 20px;
+  transition: 1s all;
+  cursor: pointer;
+}
+
+.Desencriptar:hover {
+  background-color: darkgrey;
+  transform: scale(1.1);
+}
+
+#cajaTexto {
+  border-radius: 20px;
+  width: 400px;
+  height: 750px;
+  border: solid 3px orange;
+  text-align: center;
+  margin-right: 50px;
+  margin-top: -90px;
+}   
+
+#cajaTexto img {
+  margin-top: 100px;
+  margin-left: 50px;
+  width: 300px;
+  height: 550px;
+  text-align: center;
+}
