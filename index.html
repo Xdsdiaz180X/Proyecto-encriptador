@@ -6,11 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./reset.css" />
     <link rel="stylesheet" href="./style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital@1&display=swap" rel="stylesheet">
     <title>Encriptador</title>
   </head>
   <body>
     <header id="cabeceraEncriptador">
-      <h1 id="imgCabecera"><img src="./images/2572665.png" alt="logo" /></h1>
+      <h1 id="imgCabecera"><img src="./images/descarga.png" alt="logo" /></h1>
     </header>
     <main id="mainFormulario">
       <section class="formulario">
@@ -27,8 +30,8 @@
         </form>
         <p>⚠ Solo letras minusculas y sin acentos</p>
         <div id="espacioBotones">
-          <button type="button" onclick="encriptar()">Encriptar</button>
-          <button type="button" onclick="desencriptar()">Desencriptar</button>
+          <button type="button" onclick="encriptar()" class="Encriptar">Encriptar</button>
+          <button type="button" onclick="desencriptar()" class="Desencriptar">Desencriptar</button>
         </div>
       </section>
       <section class="cajaTextoEncriptado">
