@@ -13,8 +13,15 @@ function encriptar() {
   var textoEncriptado = "";
   for (let i = 0; i < texto.length; i++) {
     let letra = texto[i];
-    let letraEncriptada = reglas[letra] || letra;
-    textoEncriptado += letraEncriptada;
+    if (letra === " " || letra.match(/[a-z]/)) {
+      let letraEncriptada = reglas[letra] || letra;
+      textoEncriptado += letraEncriptada;
+    } else {
+      alert(
+        "Solo se permiten letras minúsculas y espacios. Los caracteres especiales y las mayúsculas serán ignorados."
+      );
+      return; // Detener el proceso de encriptación
+    }
   }
   textoEncriptacion.push(textoEncriptado);
   console.log(textoEncriptacion);
@@ -84,18 +91,25 @@ function desencriptar() {
   var palabraDesencriptada = "";
   for (let i = 0; i < textoDes.length; i++) {
     let letraEncriptada = textoDes[i];
-    let letraDesencriptada = "";
-    for (let reglaEncriptada in reglasInversas) {
-      if (textoDes.startsWith(reglaEncriptada, i)) {
-        letraDesencriptada = reglasInversas[reglaEncriptada];
-        i += reglaEncriptada.length - 1;
-        break;
+    if (letraEncriptada === " " || letraEncriptada.match(/[a-z]/)) {
+      let letraDesencriptada = "";
+      for (let reglaEncriptada in reglasInversas) {
+        if (textoDes.startsWith(reglaEncriptada, i)) {
+          letraDesencriptada = reglasInversas[reglaEncriptada];
+          i += reglaEncriptada.length - 1;
+          break;
+        }
       }
+      if (!letraDesencriptada) {
+        letraDesencriptada = letraEncriptada;
+      }
+      palabraDesencriptada += letraDesencriptada;
+    } else {
+      alert(
+        "Solo se permiten letras minúsculas y espacios. Los caracteres especiales y las mayúsculas serán ignorados."
+      );
+      return; // Detener el proceso de desencriptación
     }
-    if (!letraDesencriptada) {
-      letraDesencriptada = letraEncriptada;
-    }
-    palabraDesencriptada += letraDesencriptada;
   }
 
   textoDesencriptacion.push(palabraDesencriptada);
